@@ -1,6 +1,7 @@
 import { HeroRotator } from "@/components/HeroRotator";
 import PricingCards from "@/components/PricingCards";
 
+
 export default function Home() {
   return (
     <>
