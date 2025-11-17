@@ -1,148 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SHAQ PHYSICS ARENA</title>
-  <script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@700&family=Satoshi&display=swap" rel="stylesheet">
-  <style>
-    body{margin:0;overflow:hidden;background:linear-gradient(45deg,#000,#8B4513,#000);font-family:'Satoshi',serif;color:#FFD700;}
-    h1,h2,h3{font-family:'Clash Display',serif;}
-    .card{background:rgba(0,0,0,0.7);color:#FFD700;padding:30px;border-radius:20px;text-align:center;border:4px solid #FFD700;margin:20px;cursor:grab;}
-    .btn{background:#FFD700;color:#000;padding:16px 32px;border-radius:50px;font-weight:900;text-decoration:none;display:inline-block;}
-    #shaq-splosion{position:fixed;pointer-events:none;z-index:9999;}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartland Handshake – ENDLESS REDIRECT HELL</title>
+<style>
+  body{margin:0;overflow:hidden;height:100vh;background:#000;color:#fff;font-family:Arial, sans-serif;}
+  #chaos{display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column;transition:all 1.5s ease;}
+  h1{font-size:8vw;line-height:1;margin:0;}
+  p{font-size:4vw;margin:10px;}
+  a{font-size:5vw;padding:20px 40px;margin:20px;background:#ff0;color:#000;text-decoration:none;border-radius:50px;font-weight:900;}
+</style>
 </head>
 <body>
 
-<div style="text-align:center;padding:40px;">
-  <h1 style="font-size:6rem;text-shadow:0 0 30px #ff00ff;">COR HANDSHAKVS</h1>
-  <p style="font-size:2.5rem;">DRAG • THROW • SHATTER INTO SHAQ</p>
-
-  <div id="physics-container" style="width:100vw;height:100vh;position:relative;">
-    <div class="card" data-price="49">
-      <h3>AVDITVS</h3><div style="font-size:4rem;">XLIX $</div>
-      <p>Ego tabulas inspicio</p>
-      <a href="https://gumroad.com/l/heartlandaudit" class="btn">EMERE</a>
-    </div>
-
-    <div class="card" data-price="99">
-      <h3>COLLOQVIVM</h3><div style="font-size:4rem;">XCIX $</div>
-      <p>Quindecim minuta cum SHAQVO</p>
-      <a href="https://gumroad.com/l/heartlandcall" class="btn">LIBERARE</a>
-    </div>
-
-    <div class="card" style="border:8px solid #00ff00;">
-      <h3 style="color:#00ff00;">PLENVM NEGOTIVM</h3>
-      <div style="font-size:5rem;color:#00ff00;">MCMXCIX $</div>
-      <p>SHAQVS NEGOTIATVR</p>
-      <a href="mailto:hello@heartlandhandshake.com" class="btn" style="background:#00ff00;color:#000;">QVAERERE</a>
-    </div>
-  </div>
+<div id="chaos">
+  <h1>LOADING...</h1>
+  <p>infinite redirect in progress</p>
 </div>
 
 <script>
-// REAL PHYSICS + SHAQ EXPLOSIONS
-const { Engine, Render, World, Bodies, Mouse, MouseConstraint, Runner } = Matter;
+// 8 INSANE THEMES
+const themes = [
+  // 1 – 1998 GeoCities
+  {bg: "url('https://i.imgur.com/8Qz3v5T.gif') repeat", color:"#0f0", body:"<h1><blink>WELCOME TO HEARTLAND HANDSHAKE 1998</blink></h1><p>UNDER CONSTRUCTION 🚧</p><marquee>DEALS DEALS DEALS</marquee>"},
+  
+  // 2 – MySpace glitter nightmare
+  {bg: "#000 url('https://i.imgur.com/J3X3X3X.gif') fixed", color:"#ff00ff", body:"<h1 style='text-shadow:0 0 20px #f0f'>xX HeartlandHandshake Xx</h1><p>thx 4 the add! 💖</p>"},
+  
+  // 3 – Fake Windows XP error
+  {bg: "#0000d4", color:"#fff", body:"<h1>🚨 SYSTEM ERROR 🚨</h1><p>Your car deal has performed an illegal operation and will be shut down.</p><a href='#'>OK</a>"},
+  
+  // 4 – Nigerian prince scam
+  {bg: "#fff", color:"#000", body:"<h1>DEAR BELOVED</h1><p>I am Prince Shaq O'Neal from Nigeria. I have $50 million locked in a dealership...</p><a href='#'>HELP ME CLAIM</a>"},
+  
+  // 5 – Dealership SALE SALE SALE
+  {bg: "linear-gradient(45deg,red,yellow,red)", color:"#000", body:"<h1 style='animation:blink 0.5s infinite'>🚨 HUGE SAVINGS 🚨</h1><p>NO MONEY DOWN! BAD CREDIT OK! FREE HOT DOGS!</p>"},
+  
+  // 6 – 2025 AI vaporwave
+  {bg: "linear-gradient(45deg,#ff0066,#00ffff)", color:"#fff", body:"<h1>ＨＥＡＲＴＬＡＮＤ ＨＡＮＤＳＨＡＫＥ ２６９９</h1><p>negotiating your deal in the metaverse</p>"},
+  
+  // 7 – Tumblr 2014
+  {bg: "#36465d", color:"#ff9ff3", body:"<h1>heartland handshake aesthetic</h1><p>*plays lana del rey in the background*</p><p>reblog if you hate dealerships</p>"},
+  
+  // 8 – FULL SHAQ
+  {bg: "url('https://i.imgur.com/6N4kB0Q.gif') center/cover #000", color:"#FFD700", body:"<h1>SHAQ</h1><p>SHAQ SHAQ SHAQ SHAQ SHAQ</p><a href='https://gumroad.com/l/heartlandaudit'>SHAQ NOW</a>"}
+];
 
-const engine = Engine.create();
-engine.gravity.y = 0.8;
-
-const container = document.getElementById('physics-container');
-const width = container.clientWidth;
-const height = container.clientHeight;
-
-// Ground + walls
-World.add(engine.world, [
-  Bodies.rectangle(width/2, height + 50, width*2, 100, { isStatic: true }), // floor
-  Bodies.rectangle(-50, height/2, 100, height*2, { isStatic: true }),     // left
-  Bodies.rectangle(width + 50, height/2, 100, height*2, { isStatic: true }), // right
-]);
-
-// Make every .card draggable + physics-enabled
-document.querySelectorAll('.card').forEach(card => {
-  const rect = card.getBoundingClientRect();
-  const body = Bodies.rectangle(
-    rect.left + rect.width/2,
-    rect.top + rect.height/2,
-    rect.width,
-    rect.height,
-    {
-      render: { visible: false },
-      restitution: 0.7,
-      frictionAir: 0.01
-    }
-  );
-  card.physicsBody = body;
-  World.add(engine.world, body);
-
-  // When it hits the floor → EXPLODE INTO SHAQS
-  Matter.Events.on(engine, 'collisionStart', event => {
-    event.pairs.forEach(pair => {
-      if (pair.bodyA === body || pair.bodyB === body) {
-        if (pair.bodyA.isStatic || pair.bodyB.isStatic) {
-          shatterIntoShaqs(body.position.x, body.position.y);
-          World.remove(engine.world, body);
-          card.style.opacity = '0';
-          setTimeout(() => card.remove(), 1000);
-        }
-      }
-    });
-  });
-});
-
-// Mouse/touch control
-const mouse = Mouse.create(container);
-const mouseConstraint = MouseConstraint.create(engine, {
-  mouse: mouse,
-  constraint: { stiffness: 0.2, render: { visible: false } }
-});
-World.add(engine.world, mouseConstraint);
-
-// SHAQ SHATTER FUNCTION
-function shatterIntoShaqs(x, y) {
-  for(let i = 0; i < 20; i++) {
-    const shaq = document.createElement('img');
-    shaq.src = 'https://i.imgur.com/6N4kB0Q.gif';
-    shaq.style.position = 'fixed';
-    shaq.style.left = (x - 50) + 'px';
-    shaq.style.top = (y - 50) + 'px';
-    shaq.style.width = '80px';
-    shaq.style.pointerEvents = 'none';
-    shaq.style.transform = `rotate(${Math.random()*360}deg)`;
-    document.body.appendChild(shaq);
-
-    // Animate explosion
-    const vx = (Math.random() - 0.5) * 20;
-    const vy = Math.random() * -15 - 5;
-    let px = x, py = y;
-    const anim = setInterval(() => {
-      px += vx;
-      py += vy;
-      vy += 0.8; // gravity
-      shaq.style.left = px + 'px';
-      shaq.style.top = py + 'px';
-      if (py > window.innerHeight + 100) {
-        shaq.remove();
-        clearInterval(anim);
-      }
-    }, 16);
-  }
+// Start the endless chaos
+let current = 0;
+function morph() {
+  current = (current + 1) % themes.length;
+  const t = themes[current];
+  
+  document.body.style.background = t.bg;
+  document.body.style.backgroundSize = current===0?"50px":(current===7?"cover":"400%");
+  document.getElementById('chaos').innerHTML = t.body;
+  
+  // Extra blink for XP error and dealership
+  if(current===2 || current===4) document.body.style.animation = "blink 0.4s infinite";
+  else document.body.style.animation = "";
+  
+  setTimeout(morph, Math.random()*5000 + 4000); // 4–9 seconds
 }
+setTimeout(morph, 1500);
 
-// Sync DOM positions with physics
-(function run() {
-  document.querySelectorAll('.card').forEach(card => {
-    if (card.physicsBody) {
-      const body = card.physicsBody;
-      card.style.transform = `translate(${body.position.x - card.offsetWidth/2}px, ${body.position.y - card.offsetHeight/2}px) rotate(${body.angle}rad)`;
-    }
-  });
-  requestAnimationFrame(run);
-})();
-
-Runner.run(engine);
+// Optional CSS blink
+const style = document.createElement('style');
+style.textContent = `@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}`;
+document.head.appendChild(style);
 </script>
 
 </body>
