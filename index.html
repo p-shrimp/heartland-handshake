@@ -114,7 +114,33 @@
 #shaq-attack:hover { animation-duration:0.8s; }
 </style>
 <!-- END SHAQ ATTACK -->
+  <!-- GRAVY SEASON TAKEOVER – DELETE WHEN YOU'RE DONE BEING A LEGEND -->
+<div id="gravy-season" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:99999;pointer-events:none;overflow:hidden;">
+  <h1 style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-15deg);font-size:clamp(4rem,20vw,18rem);font-weight:900;
+             color:#FFD700;text-shadow:8px 8px #8B4513,-8px -8px #FF4500,0 0 40px #FFA500;
+             animation:gravyPulse 1.8s infinite alternate,gravyWobble 0.6s infinite,gravyFloat 12s infinite linear;
+             font-family:'Comic Sans MS',cursive, sans-serif;letter-spacing:0.1em;">
+    GRAVY SEASON
+  </h1>
+</div>
+
+<style>
+@keyframes gravyPulse {
+  0% { text-shadow:8px 8px #8B4513,-8px -8px #FF4500,0 0 40px #FFA500; }
+  100% { text-shadow:20px 20px #654321,-20px -20px #FF0000,0 0 100px #FF8C00,0 0 150px #FF4500; }
+}
+@keyframes gravyWobble {
+  0%,100% { transform:translate(-50%,-50%) rotate(-15deg) scale(1); }
+  50% { transform:translate(-50%,-50%) rotate(-12deg) scale(1.15); }
+}
+@keyframes gravyFloat {
+  0% { transform:translate(-50%,-50%) rotate(-15deg) translateX(-100vw); }
+  100% { transform:translate(-50%,-50%) rotate(-15deg) translateX(100vw); }
+}
+</style>
+<!-- END GRAVY SEASON -->
 </body>
 
 </html>
+
 
