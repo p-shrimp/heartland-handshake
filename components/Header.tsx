@@ -11,8 +11,11 @@ export default function Header() {
           <Link href="/services" className="hover:text-amber-400 transition">Services</Link>
           <Link href="/blog" className="hover:text-amber-400 transition">Blog</Link>
           <Link href="/login" className="hover:text-amber-400 transition">Login</Link>
-          <Link href="/pricing" className="btn-primary text-lg">Get Started</Link>
+          <Link href="/pricing" className="bg-amber-400 text-black font-bold px-8 py-3 rounded-full hover:bg-amber-300 transition">
+            Get Started
+          </Link>
         </nav>
       </div>
     </header>
   );
+}
